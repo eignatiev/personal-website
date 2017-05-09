@@ -31,7 +31,9 @@ module.exports = {
     module: {
         rules: [
             {test: /\.jsx?$/, use: ['babel-loader'], exclude: /node_modules/},
-            {test: /\.sass$/, use: ['style-loader', 'css-loader', 'sass-loader']}
+            {test: /\.sass$/, use: ['style-loader', 'css-loader', 'sass-loader']},
+            {test: /\.ttf$/, use: ['file-loader']},
+            {test: /\.svg$/, use: ['babel-loader', 'svg-react-loader']}
         ]
     },
     plugins: [

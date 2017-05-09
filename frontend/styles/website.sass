@@ -1,37 +1,112 @@
+@font-face
+  font-family: 'FjallaOne'
+  src: url('../fonts/FjallaOne-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Average'
+  src: url('../fonts/Average-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+
 $small_size: 460px
 
+$pale_gray: #f9fafa
+
+body
+  margin: 0 0
+
+.text_header
+  font-family: FjallaOne, serif
+  font-size: 35px
+
 @media only screen and (max-width: $small_size)
-  *
-    margin-bottom: 30px
-    font-size: 32px
 
   #top_menu
-    height: 90px
-    border: dotted firebrick 3px
+    display: flex
+    height: 65px
+    padding: 0 30px
+    &_button, span
+      margin: auto 0
+    .text_header
+      flex-grow: 1
+      margin: auto
+
+  #layers
+    position: absolute
+    z-index: -1
+    width: 100%
+
+  #green_layer
+    &_top
+      background-color: #729c77
+      margin-top: 65px
+      height: 650px
+      z-index: -1
+    &_bot
+      background-color: #729c77
+      margin-top: -30px
+      height: 650px
+
+
+  #gray_layer
+    margin-top: -30px
+    background-color: $pale_gray
+    height: 436px
+    width: 100%
+    z-index: -1
 
   #block_header
-    height: 70px
-    width: 200px
-    border: dotted darkgreen 3px
+    height: 50px
+    width: 45%
+    font-family: FjallaOne, serif
+    color: white
+    background-color: #00a651
+    font-size: 40px
+    padding-left: 30px
+    margin: 40px 0 0
 
   #main_photo, #bio, #skills, #tools, #education, #courses, #buttons
     margin-left: 30px
     margin-right: 30px
 
   #main_photo
-    height: 250px
-    border: dotted darkorange 3px
+    height: 300px
     img
       display: block
       margin: 0 auto
+    #face
+      position: absolute
+      margin: 25px 65px
+      border-radius: 50%
+      width: 245px
+      &_frame
+        position: absolute
+        margin: auto 15px
 
   #bio
-    height: 500px
-    border: solid purple 3px
+    height: 560px
+    margin: 0 20px 20px
+    padding: 20px 10px
+    background-color: white
+    overflow: hidden
+    &_text > span
+      font-family: Average, serif
+      font-size: 22px
 
   #skills
     height: 350px
-    border: solid darkslategrey 3px
+    .text_header
+      margin: 20px 0
+    &list
+      margin-bottom: 40px
+    &_list > li
+      font-family: Average, serif
+      line-height: 30px
+      font-size: 22px
+      margin-left: -18px
 
   #tools
     height: 250px
